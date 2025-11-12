@@ -1,0 +1,19 @@
+:root {
+  --color-bg: rgb(33, 29, 37);
+  --color-surface: rgb(42, 38, 48);
+
+  --color-primary: rgb(140, 111, 240);
+  --color-primary-hover: rgb(165, 142, 255);
+
+  --color-secondary: rgb(78, 158, 255);
+  --color-secondary-hover: rgb(106, 177, 255);
+
+  --color-accent: rgb(255, 107, 129);
+  --color-success: rgb(74, 222, 128);
+  --color-warning: rgb(250, 204, 21);
+
+  --color-text-primary: rgb(230, 225, 240);
+  --color-text-secondary: rgb(184, 179, 198);
+
+  --color-border: rgb(55, 51, 62);
+}
