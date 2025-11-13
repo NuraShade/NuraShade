@@ -34,3 +34,30 @@
 function trimText(Text, Match, Replace)
 	return Text:gsub(Match, Replace)
 end
+
+--[[
+    Function: getIconStyle
+    Description:
+        Determines whether a section should be displayed as "Filled" or "Outlined"
+        based on whether the section name ends with the same number as the
+        provided current page index.
+
+    Parameters:
+        sectionName       - The name of the section (e.g., "Page_Content_Background_2").
+        currentPageIndex  - The current active page index to compare with.
+
+    Returns:
+        "Filled"   - If the number at the end of 'sectionName' matches 'currentPageIndex'.
+        "Outlined" - Otherwise.
+]]
+function getIconStyle(sectionName, currentPageIndex)
+    -- Extract number at the end of the section name
+    local sectionNumber = tonumber(string.match(sectionName, "_(%d+)$"))
+
+    -- Compare and return result
+    if sectionNumber == currentPageIndex then
+        return "Filled"
+    else
+        return "Outlined"
+    end
+end
