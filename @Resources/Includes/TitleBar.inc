@@ -27,7 +27,7 @@ ImageName=#@#Images\FluentIcons\WindowControls\[&Func:trimText('#CURRENTSECTION#
 SolidColor=0,0,0,0
 ImageTint=#Icons_Color#
 Padding=10,10,10,10
-MouseOverAction=[!SetOption #CURRENTSECTION# SolidColor #Icons_Solid_Color_On_Hover# ][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseOverAction=[!SetOption #CURRENTSECTION# SolidColor #On_Hover_Color# ][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# SolidColor 0,0,0,0][!UpdateMeter #CURRENTSECTION#][!Redraw]
 DynamicVariables=1
 

@@ -24,8 +24,8 @@ Hover_SideBar_Width=200
 SideBar_Stroke_Width=5
 SideBar_Animation_Steps=15
 ;------------------
-Page_Content_Icon_Width=30
-Page_Content_Icon_Height=30
+Page_Content_Icon_Width=25
+Page_Content_Icon_Height=25
 Page_Content_Background_Width=([SideBar_Background:W]-20)
 Page_Content_Background_Height=40
 
@@ -62,9 +62,12 @@ DynamicVariables=1
 Meter=Shape
 X=([SideBar_Background:X]+#SideBar_Stroke_Width#+4)
 Y=10R
-Shape=Rectangle 0,0,#Page_Content_Background_Width#,#Page_Content_Background_Height#,8 | StrokeWidth 0 | FillColor 10,10,10
+Shape=Rectangle 0,0,#Page_Content_Background_Width#,#Page_Content_Background_Height#,8 | StrokeWidth 0 | Extend This
+This=FillColor 0,0,0,0
 DynamicVariables=1
 Group=SideBar_Content
+MouseOverAction=[!SetOption #CURRENTSECTION# This  "FillColor #On_Hover_Color#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This  "FillColor 0,0,0,0"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 
 [Page_Content_Icon]
 Meter=Image
@@ -81,13 +84,13 @@ Meter=String
 Text=Home
 FontColor=255,255,255
 X=15R
-Y=((#Page_Content_Icon_Height#/2))r
-W=((#Current_SideBar_Width#)*#SideBar_Hover_State#)-30
+Y=([Page_Content_Icon:H]/2)r
+W=(#Current_SideBar_Width#-60)
+ClipString=2
 Group=SideBar_Content
-SolidColor=255,255,12
 Antialias=1
 FontFace=#Font_Style#
-FontSize=12
+FontSize=10
 StringAlign=LeftCenter
+FontWeight=100
 DynamicVariables=1
-Hidden=(1-#SideBar_Hover_State#)
