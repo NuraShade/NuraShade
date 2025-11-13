@@ -60,6 +60,7 @@ FontColor=255,255,255
 X=15R
 Y=(#Page_Content_Icon_Width#/2)r
 W=(#Current_SideBar_Width#-80)
+H=20
 ClipString=2
 Antialias=1
 StringAlign=LeftCenter
