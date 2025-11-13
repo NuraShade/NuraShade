@@ -48,15 +48,18 @@ W=#Page_Content_Icon_Width#
 H=#Page_Content_Icon_Height#
 Group=SideBar_Content
 DynamicVariables=1
+
 [Page_Content_Icon_Active_0_Style]
 ImageTint=#Icon_Color#
+
 [Page_Content_Icon_Active_1_Style]
 ImageTint=#Active_Icon_Color#
+
 [Page_Content_Text_Style]
 FontColor=255,255,255
 X=15R
 Y=(#Page_Content_Icon_Width#/2)r
-W=(#Current_SideBar_Width#-60)
+W=(#Current_SideBar_Width#-80)
 ClipString=2
 Antialias=1
 StringAlign=LeftCenter
@@ -68,6 +71,7 @@ DynamicVariables=1
 
 [Page_Content_Text_Active_0_Style]
 FontColor=#Secondary_Text_Color#
+
 [Page_Content_Text_Active_1_Style]
 FontColor=#Primary_Text_Color#
 ;=============================================================
@@ -94,19 +98,9 @@ DynamicVariables=1
 MouseOverAction=[!CommandMeasure SideBar_Content_Transition_Timer "Stop 2"][!CommandMeasure SideBar_Content_Transition_Timer "Execute 1"]
 MouseLeaveAction=[!CommandMeasure SideBar_Content_Transition_Timer "Stop 1"][!CommandMeasure SideBar_Content_Transition_Timer "Execute 2"]
 
-[SideBar_Inside_Style]
-Meter=Shape
-X=(([SideBar_Background:W]/2)-(([SideBar_Background:W]-30)/2))r
-Y=([SideBar_Background:Y]+20)
-Shape=Rectangle 0,0,([SideBar_Background:W]-30),2,2 | StrokeWidth 0 | FillColor #Icon_Color#
-Shape2=Rectangle 0,8,([SideBar_Background:W]-30),2,2 | StrokeWidth 0 | FillColor #Icon_Color# 
-Shape3=Rectangle 0,16,([SideBar_Background:W]-30),2,2 | StrokeWidth 0 | FillColor #Icon_Color#
-Group=SideBar_Content
-DynamicVariables=1
-
 [Page_Content_Background_1]
 Meter=Shape
-Y=50R
+Y=20r
 MeterStyle=Page_Content_Background_Style
 [Page_Content_Icon_1]
 Meter=Image
@@ -151,4 +145,25 @@ MeterStyle=Page_Content_Icon_Style
 [Page_Content_Text_4]
 Meter=String
 Text=About
+MeterStyle=Page_Content_Text_Style | Page_Content_Text_Active_0_Style
+
+[SideBar_Divider]
+Meter=Shape
+X=([SideBar_Background:X]+10)
+Y=([SideBar_Background:Y]+[SideBar_Background:H]-70)
+Shape=Line 0,0,([SideBar_Background:W]-20),0 | StrokeWidth 1 | Stroke Color #Icon_Color#,100
+Group=SideBar_Content
+DynamicVariables=1
+
+[Page_Content_Background_5]
+Meter=Shape
+Y=10R
+MeterStyle=Page_Content_Background_Style
+[Page_Content_Icon_5]
+Meter=Image
+ImageName=#@#Images\FluentIcons\SideBar\Settings[&Func:getIconStyle('#CURRENTSECTION#',#Current_Page_Index#)].png
+MeterStyle=Page_Content_Icon_Style
+[Page_Content_Text_5]
+Meter=String
+Text=Settings
 MeterStyle=Page_Content_Text_Style | Page_Content_Text_Active_0_Style
