@@ -25,6 +25,8 @@ InlineSetting5=Color | #Secondary_Text_Color#
 InlinePattern5=Modern\..*$
 InlineSetting6=Size | (60*[Scale_Size])
 InlinePattern6=^NuraShade
+InlineSetting7=Weight | 500
+InlinePattern7=(?<=NuraShade #CRLF##CRLF#).*customization\.
 
 [Social_Icon_Background_Style]
 X=15R
