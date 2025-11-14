@@ -27,25 +27,27 @@ InlineSetting6=Size | (60*[Scale_Size])
 InlinePattern6=^NuraShade
 
 [Social_Icon_Background_Style]
-X=20R
-Y=([Description_Text:Y]+[Description_Text:H]+30)
-Shape=Rectangle 0,0,(45*[Scale_Size]),(45*[Scale_Size]),(45*[Scale_Size]) | StrokeWidth (4*[Scale_Size]) | Stroke LinearGradient MyStrokeGradient | Fill LinearGradient MyFillGradient 
-MyFillGradient=180 | 0,0,0,0 ; 0.0 | 0,0,0,0 ; 0.5 
-MyStrokeGradient=90 | #Primary_Accent_Color# ; 0.0 | #Secondary_Accent_Color# ; 0.5 
+X=15R
+Y=([Description_Text:Y]+[Description_Text:H]+40)
+Shape=Rectangle 0,0,(50*[Scale_Size]),(50*[Scale_Size]),(12*[Scale_Size]) | StrokeWidth (2*[Scale_Size]) | Stroke LinearGradient MyStrokeGradient | Fill LinearGradient MyFillGradient 
+MyFillGradient=180 | #Secondary_Color#,50 ; 0.0 | #Secondary_Color#,30 ; 1.0 
+MyStrokeGradient=90 | #Primary_Accent_Color#,80 ; 0.0 | #Secondary_Accent_Color#,80 ; 1.0 
 DynamicVariables=1
 Container=Content_Container
 Group=Social_Link
-MouseOverAction=[!SetOption #CURRENTSECTION# MyFillGradient "180 | #Primary_Accent_Color# ; 0.0 | #Secondary_Accent_Color# ; 0.5"][!SetOption #CURRENTSECTION# MyStrokeGradient "180 | #Primary_Accent_Color# ; 0.0 | #Secondary_Accent_Color# ; 0.5 "][!UpdateMeterGroup Social_Link][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# MyFillGradient "180 | 0,0,0,0 ; 0.0 | 0,0,0,0 ; 0.5"][!SetOption #CURRENTSECTION# MyStrokeGradient "90 | #Primary_Accent_Color# ; 0.0 | #Secondary_Accent_Color# ; 0.5"][!UpdateMeterGroup Social_Link][!Redraw]
+MouseOverAction=[!SetOption #CURRENTSECTION# MyFillGradient "180 | #Primary_Accent_Color#,100 ; 0.0 | #Secondary_Accent_Color#,100 ; 1.0"][!SetOption #CURRENTSECTION# MyStrokeGradient "180 | #Primary_Accent_Color# ; 0.0 | #Secondary_Accent_Color# ; 1.0"][!UpdateMeterGroup Social_Link][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# MyFillGradient "180 | #Secondary_Color#,50 ; 0.0 | #Secondary_Color#,30 ; 1.0"][!SetOption #CURRENTSECTION# MyStrokeGradient "90 | #Primary_Accent_Color#,80 ; 0.0 | #Secondary_Accent_Color#,80 ; 1.0"][!UpdateMeterGroup Social_Link][!Redraw]
 [Social_Icon_Style]
 ImageName=#@#Images\Social\[&Func:trimText('#CURRENTSECTION#','_Icon','')].png
-X=(((45*[Scale_Size])/2)-((30*[Scale_Size])/2))r
-Y=(((45*[Scale_Size])/2)-((30*[Scale_Size])/2))r
-W=(30*[Scale_Size])
-H=(30*[Scale_Size])
+X=(((50*[Scale_Size])/2)-((32*[Scale_Size])/2))r
+Y=(((50*[Scale_Size])/2)-((32*[Scale_Size])/2))r
+W=(32*[Scale_Size])
+H=(32*[Scale_Size])
 DynamicVariables=1
-ImageTint=#Icon_Color#
+ImageTint=#Primary_Text_Color#
 Container=Content_Container
+Group=Social_Link
+
 
 [Website_Background_Shape]
 Meter=Shape
