@@ -104,7 +104,7 @@ MeterStyle=Social_Icon_Background_Style
 [Discord_Icon]
 Meter=Image
 MeterStyle=Social_Icon_Style
-;Left Logo.
+;Right Side Logo.
 [NuraShade__Home_Logo]
 Meter=Image
 ImageName=#@#Images\NuraShade.png
