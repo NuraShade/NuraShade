@@ -20,6 +20,7 @@
 SideBar_Hover_State=0
 Current_SideBar_Width=60
 Original_SideBar_Width=60
+SideBar_X_Pos=10
 Hover_SideBar_Width=200
 SideBar_Stroke_Width=5
 SideBar_Animation_Steps=15
@@ -32,7 +33,7 @@ Page_Content_Background_Height=40
 ;           MeterStyles
 ;=============================================================
 [Page_Content_Background_Style]
-X=([SideBar_Background:X]+#SideBar_Stroke_Width#+4)
+X=(#SideBar_X_Pos#+#SideBar_Stroke_Width#+4)
 Y=15R
 Shape=Rectangle 0,0,#Page_Content_Background_Width#,#Page_Content_Background_Height#,8 | StrokeWidth 0 | Extend This
 This=FillColor 0,0,0,0
@@ -91,7 +92,7 @@ DynamicVariables=1
 ;=============================================================
 [SideBar_Background]
 Meter=Shape
-X=10
+X=#SideBar_X_Pos#
 Y=(#TitleBar_Height#+#SideBar_Stroke_Width#)
 Shape=Rectangle 0,0,(#Current_SideBar_Width#),(#Skin_Height#-#TitleBar_Height#-(#SideBar_Stroke_Width#+10)),15 | StrokeWidth #SideBar_Stroke_Width# | StrokeColor #Primary_Color# | FillColor #Secondary_Color#
 Group=SideBar_Content
@@ -99,72 +100,4 @@ DynamicVariables=1
 MouseOverAction=[!CommandMeasure SideBar_Content_Transition_Timer "Stop 2"][!CommandMeasure SideBar_Content_Transition_Timer "Execute 1"]
 MouseLeaveAction=[!CommandMeasure SideBar_Content_Transition_Timer "Stop 1"][!CommandMeasure SideBar_Content_Transition_Timer "Execute 2"]
 
-[Page_Content_Background_1]
-Meter=Shape
-Y=20r
-MeterStyle=Page_Content_Background_Style
-[Page_Content_Icon_1]
-Meter=Image
-ImageName=#@#Images\FluentIcons\SideBar\Home[&Func:getIconStyle('#CURRENTSECTION#',#Current_Page_Index#)].png
-MeterStyle=Page_Content_Icon_Style | Page_Content_Icon_Active_0_Style
-[Page_Content_Text_1]
-Meter=String
-Text=Home
-MeterStyle=Page_Content_Text_Style | Page_Content_Text_Active_0_Style
-
-[Page_Content_Background_2]
-Meter=Shape
-MeterStyle=Page_Content_Background_Style
-[Page_Content_Icon_2]
-Meter=Image
-ImageName=#@#Images\FluentIcons\SideBar\Widgets[&Func:getIconStyle('#CURRENTSECTION#',#Current_Page_Index#)].png
-MeterStyle=Page_Content_Icon_Style
-[Page_Content_Text_2]
-Meter=String
-Text=Widgets
-MeterStyle=Page_Content_Text_Style | Page_Content_Text_Active_0_Style
-
-[Page_Content_Background_3]
-Meter=Shape
-MeterStyle=Page_Content_Background_Style
-[Page_Content_Icon_3]
-Meter=Image
-ImageName=#@#Images\FluentIcons\SideBar\Store[&Func:getIconStyle('#CURRENTSECTION#',#Current_Page_Index#)].png
-MeterStyle=Page_Content_Icon_Style
-[Page_Content_Text_3]
-Meter=String
-Text=Store
-MeterStyle=Page_Content_Text_Style | Page_Content_Text_Active_0_Style
-
-[Page_Content_Background_4]
-Meter=Shape
-MeterStyle=Page_Content_Background_Style
-[Page_Content_Icon_4]
-Meter=Image
-ImageName=#@#Images\FluentIcons\SideBar\About[&Func:getIconStyle('#CURRENTSECTION#',#Current_Page_Index#)].png
-MeterStyle=Page_Content_Icon_Style
-[Page_Content_Text_4]
-Meter=String
-Text=About
-MeterStyle=Page_Content_Text_Style | Page_Content_Text_Active_0_Style
-
-[SideBar_Divider]
-Meter=Shape
-X=([SideBar_Background:X]+10)
-Y=([SideBar_Background:Y]+[SideBar_Background:H]-70)
-Shape=Line 0,0,([SideBar_Background:W]-20),0 | StrokeWidth 1 | Stroke Color #Icon_Color#,100
-Group=SideBar_Content
-DynamicVariables=1
-
-[Page_Content_Background_5]
-Meter=Shape
-Y=10R
-MeterStyle=Page_Content_Background_Style
-[Page_Content_Icon_5]
-Meter=Image
-ImageName=#@#Images\FluentIcons\SideBar\Settings[&Func:getIconStyle('#CURRENTSECTION#',#Current_Page_Index#)].png
-MeterStyle=Page_Content_Icon_Style
-[Page_Content_Text_5]
-Meter=String
-Text=Settings
-MeterStyle=Page_Content_Text_Style | Page_Content_Text_Active_0_Style
+@include_sidebar_variant=#@#Includes\SideBarVariant#SideBar_Variant#.inc

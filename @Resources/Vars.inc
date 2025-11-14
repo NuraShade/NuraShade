@@ -28,3 +28,5 @@ Active_Icon_Color=190, 160, 255
 On_Hover_Color=165,142,255,20
 Font_Style=Inter
 Skin_Name=NuraShade
+Primary_Accent_Color=138, 43, 226
+Secondary_Accent_Color=59, 130, 246
